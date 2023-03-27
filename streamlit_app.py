@@ -3,7 +3,6 @@ from streamlit_chat import message
 import time
 from chatCode import reply_to_question
 import random
-import keyboard
 
 cnt = 0
 if __name__ == '__main__':
