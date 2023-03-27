@@ -36,9 +36,11 @@ if __name__ == '__main__':
     st.markdown(style, unsafe_allow_html=True)
 
     if submitted and user_input:
-        
-        ans = reply_to_question(user_input)
-        print(ans)
+        try:
+            ans = reply_to_question(user_input)
+            print(ans)
+        except:
+            ans = 'An error occured. Please try again later.'
         st.session_state.past.append(user_input)
         st.session_state.generated.append(ans)
         if 'key' not in st.session_state:
