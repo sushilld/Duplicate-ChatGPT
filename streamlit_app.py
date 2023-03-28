@@ -21,7 +21,7 @@ if __name__ == '__main__':
     
     style = """
     <style>
-     div[class='css-12ttj6m epcbefy1']{
+     div[xpath='/html/body/div/div[1]/div[1]/div/div/div/section/div[1]/div[1]/div/div[2]']{
                 background: rgba(0, 0, 0, 0.3);
                 position: fixed;
                 bottom: 0;
