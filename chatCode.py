@@ -1,7 +1,7 @@
 import openai
 # from TTS import speakingText
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 def reply_to_question(question, prev_question_list = []):
