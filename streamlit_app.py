@@ -14,25 +14,27 @@ if __name__ == '__main__':
     if 'past' not in st.session_state:
         st.session_state['past'] = []
 
+    placeholder = st.empty()
+    
     with st.form('form', clear_on_submit=True):
         cnt += 1
-        user_input = st.text_input('enter message : ', '')
+        user_input = st.text_input('Enter message : ', '')
         submitted = st.form_submit_button('submit', use_container_width=10)
     
-    style = """
-    <style>
-     div[class='css-1p05t8e epcbefy1']{
-                background: rgba(0, 0, 0, 0.3); 
-                position: fixed;
-                bottom: 0;
-                transform: translate(-50%, -50%);
-                width: 40%;
-                left: 50%;
-                z-index: 999;
-                margin-top: 10rem;
-              }
-    </style>
-    """
+    # style = """
+    # <style>
+    #  div[class='css-1p05t8e epcbefy1']{
+    #             background: rgba(0, 0, 0, 0.3); 
+    #             position: fixed;
+    #             bottom: 0;
+    #             transform: translate(-50%, -50%);
+    #             width: 40%;
+    #             left: 50%;
+    #             z-index: 999;
+    #             margin-top: 10rem;
+    #           }
+    # </style>
+    # """
     # st.markdown(style, unsafe_allow_html=True)
 
     if submitted and user_input:
@@ -49,8 +51,8 @@ if __name__ == '__main__':
         else:
             st.session_state['key'] = time.time() + random.randint(101, 200)
 
-       
-    for i in range(len(st.session_state['past'])):
-        message(st.session_state['past'][i], is_user=True,key=str(time.time() + random.randint(201, 300)))
-        if len(st.session_state['generated']) > i:
-            message(st.session_state['generated'][i], key= str(time.time() + random.randint(301, 400)))
+    with placeholder.container():
+        for i in range(len(st.session_state['past'])):
+            message(st.session_state['past'][i], is_user=True,key=str(time.time() + random.randint(201, 300)))
+            if len(st.session_state['generated']) > i:
+                message(st.session_state['generated'][i], key= str(time.time() + random.randint(301, 400)))
