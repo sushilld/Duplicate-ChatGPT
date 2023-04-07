@@ -33,7 +33,7 @@ if __name__ == '__main__':
               }
     </style>
     """
-    st.markdown(style, unsafe_allow_html=True)
+    # st.markdown(style, unsafe_allow_html=True)
 
     if submitted and user_input:
         try:
