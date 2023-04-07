@@ -1,12 +1,13 @@
 import openai
+import streamlit as st
 # from TTS import speakingText
 
-openai.api_key = ''
+openai.api_key = st.secrets['api_key']
 
 
 def reply_to_question(question, prev_question_list = []):
   if len(prev_question_list) == 0:
-    few_shot_text = '''### Answer questions like a chat-bot. Also take into account the previous questions and answers.
+    few_shot_text = '''### Answer questions like a chat-bot.
                       [Question] Who are you?
                       [Answer] Hi!! My name is Sushil. How may I help you?
                       [Question] Thanks for helping me.

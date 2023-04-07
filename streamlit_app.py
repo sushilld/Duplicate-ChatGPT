@@ -22,7 +22,7 @@ if __name__ == '__main__':
     style = """
     <style>
      div[class='css-1p05t8e epcbefy1']{
-                background: rgba(0, 0, 0, 0.3);
+                background: rgba(0, 0, 0, 0.3); 
                 position: fixed;
                 bottom: 0;
                 transform: translate(-50%, -50%);
@@ -47,10 +47,10 @@ if __name__ == '__main__':
             st.session_state['key'] = time.time() + random.randint(0, 100)
 
         else:
-            st.session_state['key'] = time.time() + random.randint(0, 100)
+            st.session_state['key'] = time.time() + random.randint(101, 200)
 
        
     for i in range(len(st.session_state['past'])):
-        message(st.session_state['past'][i], is_user=True,key=str(time.time() + random.randint(100, 200)))
+        message(st.session_state['past'][i], is_user=True,key=str(time.time() + random.randint(201, 300)))
         if len(st.session_state['generated']) > i:
-            message(st.session_state['generated'][i], key= str(time.time() + random.randint(300, 400)))
+            message(st.session_state['generated'][i], key= str(time.time() + random.randint(301, 400)))
